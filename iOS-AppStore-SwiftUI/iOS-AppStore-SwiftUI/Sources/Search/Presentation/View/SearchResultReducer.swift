@@ -24,7 +24,7 @@ struct SearchResultReducer {
         
         var isInitalized: Bool = false
         var showingState: SearchState = .showingResult
-        var searchResults: [SearchResult] = []
+        var searchResults: [SearchResultViewModel] = []
         var countLimit: Int = searchCountLimitUnit
         var isLimit: Bool {
           countLimit >= searchCountMaxLimit
@@ -36,7 +36,7 @@ struct SearchResultReducer {
     enum Action {
         case loadMore
         case executeSearch
-        case searchResponse(SearchResponse)
+        case searchResponse([SearchResultEntity])
     }
     
     // MARK: - Properties
@@ -79,11 +79,11 @@ struct SearchResultReducer {
                     await send(.searchResponse(await fetchSearchUseCase.execute(keyword: keyword, countLimit: countLimit)))
                 }
             case let .searchResponse(response):
-                if response.results.isEmpty {
+                if response.isEmpty {
                     state.searchResults = []
                     state.showingState = .showingEmpty
                 } else {
-                    state.searchResults = response.results
+                    state.searchResults = response.map { $0.toViewModel() }
                     state.showingState = .showingResult
                     state.countLimit += Self.searchCountLimitUnit
                 }

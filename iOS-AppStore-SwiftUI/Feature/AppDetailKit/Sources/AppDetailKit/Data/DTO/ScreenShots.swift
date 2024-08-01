@@ -14,8 +14,8 @@ public struct ScreenShots {
         self.urls = urls
     }
     
-    public init(from result: AppDetailDTO) {
-        self.urls = result.screenshotUrls
+    public init(from screenshotUrls: [URL]) {
+        self.urls = screenshotUrls
     }
 }
 

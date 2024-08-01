@@ -6,5 +6,5 @@
 //
 
 protocol SearchRepositoryProtocol {
-    func fetchSearchList(keyword: String, countLimit: Int) async -> SearchResponse
+    func fetchSearchList(keyword: String, countLimit: Int) async -> [SearchResultEntity]
 }

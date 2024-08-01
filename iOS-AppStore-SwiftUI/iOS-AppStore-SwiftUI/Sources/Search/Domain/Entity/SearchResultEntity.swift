@@ -1,5 +1,5 @@
 //
-//  SearchResult.swift
+//  SearchResultEntity.swift
 //  Appstore-SwiftUI
 //
 //  Created by 최승명 on 7/26/24.
@@ -9,7 +9,7 @@ import Foundation
 
 import AppDetailKit
 
-struct SearchResult: Decodable, Hashable {
+struct SearchResultEntity: Decodable, Hashable {
     /// 앱 ID
     let trackId: Int
     /// 앱 이름
@@ -60,13 +60,7 @@ struct SearchResult: Decodable, Hashable {
     let languageCodesISO2A: [String]?
 }
 
-// MARK: - Identifiable
-
-extension SearchResult: Identifiable {
-    var id: Int { trackId }
-}
-
-extension SearchResult {
+extension SearchResultEntity {
     func toAppDetail() -> AppDetailDTO {
         .init(
             trackId: self.trackId,
@@ -85,6 +79,19 @@ extension SearchResult {
             artworkUrl100: self.artworkUrl100,
             fileSizeBytes: self.fileSizeBytes,
             languageCodesISO2A: self.languageCodesISO2A
+        )
+    }
+}
+
+extension SearchResultEntity {
+    func toViewModel() -> SearchResultViewModel {
+        .init(
+            trackId: self.trackId,
+            trackName: self.trackName, 
+            screenshotUrls: self.screenshotUrls,
+            artistName: self.artistName,
+            genre: self.genres.first ?? "",
+            artworkUrl60: self.artworkUrl60
         )
     }
 }

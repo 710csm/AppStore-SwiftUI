@@ -35,7 +35,7 @@ public struct AppDetailView: View {
                 horizontalDivider
                 
                 AppDetailScreenShotSection(
-                    screenshots: .init(from: result)
+                    screenshots: .init(from: result.screenshotUrls)
                 )
                 
                 AppDetailDescriptionSection(

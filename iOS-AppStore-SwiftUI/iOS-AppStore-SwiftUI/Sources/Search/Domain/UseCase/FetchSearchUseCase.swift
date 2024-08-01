@@ -8,7 +8,7 @@
 import ComposableArchitecture
 
 protocol FetchSearchUseCaseProtocol {
-    func execute(keyword: String, countLimit: Int) async -> SearchResponse
+    func execute(keyword: String, countLimit: Int) async -> [SearchResultEntity]
 }
 
 struct FetchSearchUseCase: FetchSearchUseCaseProtocol {
@@ -19,11 +19,11 @@ struct FetchSearchUseCase: FetchSearchUseCaseProtocol {
         self.searchRepository = searchRepository
     }
 
-    func execute(keyword: String, countLimit: Int) async -> SearchResponse {
+    func execute(keyword: String, countLimit: Int) async -> [SearchResultEntity] {
         if !keyword.isEmpty {
             return await searchRepository.fetchSearchList(keyword: keyword, countLimit: countLimit)
         } else {
-            return SearchResponse(resultCount: 0, results: [])
+            return []
         }
     }
 }

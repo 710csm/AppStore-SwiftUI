@@ -39,7 +39,7 @@ struct SearchResultView: View {
                         SearchResultHeaderView(result: result)
                         
                         ScreenShotView(
-                            screenShots: .init(from: result.toAppDetail())
+                            screenShots: .init(from: result.screenshotUrls)
                         )
                     }
                     .overlay(
@@ -81,7 +81,7 @@ struct SearchResultView: View {
 // MARK: - SearchResultHeaderView
 
 struct SearchResultHeaderView: View {
-    let result: SearchResult
+    let result: SearchResultViewModel
     
     var body: some View {
         HStack {
@@ -94,7 +94,7 @@ struct SearchResultHeaderView: View {
                     .font(.body)
                     .lineLimit(1)
                 
-                Text(result.genres.first ?? "")
+                Text(result.genre)
                     .font(.caption)
                     .foregroundColor(.gray.opacity(0.6))
             }
