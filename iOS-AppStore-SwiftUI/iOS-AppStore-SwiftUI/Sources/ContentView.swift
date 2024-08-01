@@ -7,15 +7,42 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct ContentView: View {
+    
+    @Environment(\.modelContext) var modelContext
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Text("The First Tab")
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("First")
+                }
+            Text("Another Tab")
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Second")
+                }
+            SearchView(
+                store: Store(initialState: SearchReducer.State()) {
+                    SearchReducer(
+                        recentSearchUseCase: FetchRecentSearchUseCase(
+                            recentSearchRepository: RecentSearchRepository(modelContext: modelContext)
+                        ),
+                        saveRecentSearchUseCase: SaveRecentSearchUseCase(
+                            recentSearchRepository: RecentSearchRepository(modelContext: modelContext)
+                        )
+                    )
+                }
+            )
+            .tabItem {
+                Image(systemName: "3.square.fill")
+                Text("Third")
+            }
         }
-        .padding()
+        .font(.headline)
     }
 }
 
