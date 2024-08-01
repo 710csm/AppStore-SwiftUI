@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+import AppDetailKit
 import ComposableArchitecture
 import DesignSystem
 
@@ -23,7 +24,7 @@ struct SearchView: View {
             showingList
                 .navigationTitle(AppText.searchBarTitle)
                 .navigationDestination(for: SearchResult.self) { searchResult in
-                    AppDetailView(result: searchResult)
+                    AppDetailView(result: searchResult.toAppDetail())
                 }
         }
         .autocorrectionDisabled()

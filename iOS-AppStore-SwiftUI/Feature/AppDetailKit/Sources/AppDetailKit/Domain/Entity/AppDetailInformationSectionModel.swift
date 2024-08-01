@@ -20,7 +20,7 @@ struct AppDetailInformationSectionModel {
         return byte.byteUnitText
     }
     
-    init(from result: SearchResult) {
+    init(from result: AppDetailDTO) {
         self.artistName = result.artistName
         self.fileSizeBytes = result.fileSizeBytes
         self.firstGenre = result.genres.first ?? ""

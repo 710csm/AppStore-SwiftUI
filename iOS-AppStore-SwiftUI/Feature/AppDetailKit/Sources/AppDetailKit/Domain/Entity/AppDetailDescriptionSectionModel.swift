@@ -11,7 +11,7 @@ struct AppDetailDescriptionSectionModel {
     let description: String
     let artistName: String
     
-    init(from result: SearchResult) {
+    init(from result: AppDetailDTO) {
         self.description = result.description
         self.artistName = result.artistName
     }

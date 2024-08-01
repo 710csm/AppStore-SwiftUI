@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct ScreenShots {
-    let urls: [URL]
+public struct ScreenShots {
+    public let urls: [URL]
     
-    init(urls: [URL]) {
+    public init(urls: [URL]) {
         self.urls = urls
     }
     
-    init(from result: SearchResult) {
+    public init(from result: AppDetailDTO) {
         self.urls = result.screenshotUrls
     }
 }
@@ -22,17 +22,17 @@ struct ScreenShots {
 // MARK: - 스크린샷 비율 관련 로직
 
 extension ScreenShots {
-    var mode: ScreenShotMode {
+    public var mode: ScreenShotMode {
         guard let screenShotURL = urls.first else { return .none }
         return ScreenShotMode(screenShotURL: screenShotURL)
     }
     
-    var isLongWidth: Bool {
+    public var isLongWidth: Bool {
         mode == .longWidth
     }
 }
 
-enum ScreenShotMode {
+public enum ScreenShotMode {
     case longHeight
     case longWidth
     case none
@@ -53,7 +53,7 @@ enum ScreenShotMode {
         self = .none
     }
     
-    var ratio: CGFloat {
+    public var ratio: CGFloat {
         switch self {
         case .longHeight: return 392.0 / 696.0
         case .longWidth: return 406.0 / 228.0

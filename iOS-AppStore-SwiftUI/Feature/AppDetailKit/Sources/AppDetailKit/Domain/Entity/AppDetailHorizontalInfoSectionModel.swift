@@ -35,7 +35,7 @@ struct AppDetailHorizontalInfoSectionModel {
         averageUserRating.rounded(to: 1)
     }
     
-    init(from result: SearchResult) {
+    init(from result: AppDetailDTO) {
         self.userRatingCount = result.userRatingCount
         self.averageUserRating = result.averageUserRating
         self.contentAdvisoryRating = result.contentAdvisoryRating

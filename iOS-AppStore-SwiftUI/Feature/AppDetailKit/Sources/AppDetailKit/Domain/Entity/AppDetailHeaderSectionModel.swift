@@ -14,7 +14,7 @@ struct AppDetailHeaderSectionModel {
     let id: Int
     let trackViewUrl: String?
     
-    init(from result: SearchResult) {
+    init(from result: AppDetailDTO) {
         self.artworkUrl100 = result.artworkUrl100
         self.trackName = result.trackName
         self.artistName = result.artistName

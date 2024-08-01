@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct AppDetailView: View {
+public struct AppDetailView: View {
     
-    let result: SearchResult
+    let result: AppDetailDTO
     
-    var body: some View {
+    public init(result: AppDetailDTO) {
+        self.result = result
+    }
+    
+    public var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
                 AppDetailHeaderSection(

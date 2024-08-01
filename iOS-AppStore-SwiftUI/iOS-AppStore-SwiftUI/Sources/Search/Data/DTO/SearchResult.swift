@@ -7,6 +7,8 @@
 
 import Foundation
 
+import AppDetailKit
+
 struct SearchResult: Decodable, Hashable {
     /// 앱 ID
     let trackId: Int
@@ -62,4 +64,27 @@ struct SearchResult: Decodable, Hashable {
 
 extension SearchResult: Identifiable {
     var id: Int { trackId }
+}
+
+extension SearchResult {
+    func toAppDetail() -> AppDetailDTO {
+        .init(
+            trackId: self.trackId,
+            trackName: self.trackName,
+            description: self.description,
+            screenshotUrls: self.screenshotUrls,
+            releaseNotes: self.releaseNotes,
+            currentVersionReleaseDate: self.currentVersionReleaseDate,
+            version: self.version,
+            artistName: self.artistName,
+            genres: self.genres,
+            trackViewUrl: self.trackViewUrl,
+            contentAdvisoryRating: self.contentAdvisoryRating,
+            averageUserRating: self.averageUserRating,
+            userRatingCount: self.userRatingCount,
+            artworkUrl100: self.artworkUrl100,
+            fileSizeBytes: self.fileSizeBytes,
+            languageCodesISO2A: self.languageCodesISO2A
+        )
+    }
 }

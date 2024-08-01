@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+import AppDetailKit
 import ComposableArchitecture
 import DesignSystem
 import NukeUI
@@ -38,7 +39,7 @@ struct SearchResultView: View {
                         SearchResultHeaderView(result: result)
                         
                         ScreenShotView(
-                            screenShots: .init(from: result)
+                            screenShots: .init(from: result.toAppDetail())
                         )
                     }
                     .overlay(

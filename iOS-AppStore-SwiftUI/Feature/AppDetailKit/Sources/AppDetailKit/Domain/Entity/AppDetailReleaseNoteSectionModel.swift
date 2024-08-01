@@ -20,7 +20,7 @@ struct AppDetailReleaseNoteSectionModel {
         return date.formatPassedDay()
     }
     
-    init(from result: SearchResult) {
+    init(from result: AppDetailDTO) {
         self.version = result.version
         self.releaseNotes = result.releaseNotes
         self.currentReleaseDate = result.currentVersionReleaseDate
