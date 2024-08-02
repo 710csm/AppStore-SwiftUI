@@ -71,6 +71,10 @@ struct SearchResultReducer {
                     return .none
                 }
                 
+                guard state.showingState == .loading else {
+                    return .none
+                }
+                
                 state.isInitalized = true
                 state.showingState = .loading
                 state.countLimit = Self.searchCountLimitUnit
