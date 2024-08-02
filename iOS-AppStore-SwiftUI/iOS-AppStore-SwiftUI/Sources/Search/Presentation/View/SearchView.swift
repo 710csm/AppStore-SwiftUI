@@ -23,9 +23,9 @@ struct SearchView: View {
         NavigationStack {
             showingList
                 .navigationTitle(AppText.searchBarTitle)
-//                .navigationDestination(for: SearchResultViewModel.self) { searchResult in
-//                    AppDetailView(result: searchResult.toAppDetail())
-//                }
+                .navigationDestination(for: SearchResultEntity.self) { searchResult in
+                    AppDetailView(result: searchResult.toAppDetail())
+                }
         }
         .autocorrectionDisabled()
         .searchable(

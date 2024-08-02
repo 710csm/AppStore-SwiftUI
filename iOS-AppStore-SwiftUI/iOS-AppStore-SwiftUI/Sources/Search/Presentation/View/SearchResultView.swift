@@ -81,7 +81,7 @@ struct SearchResultView: View {
 // MARK: - SearchResultHeaderView
 
 struct SearchResultHeaderView: View {
-    let result: SearchResultViewModel
+    let result: SearchResultEntity
     
     var body: some View {
         HStack {
@@ -94,7 +94,7 @@ struct SearchResultHeaderView: View {
                     .font(.body)
                     .lineLimit(1)
                 
-                Text(result.genre)
+                Text(result.genres.first ?? "")
                     .font(.caption)
                     .foregroundColor(.gray.opacity(0.6))
             }

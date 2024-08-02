@@ -83,15 +83,8 @@ extension SearchResultEntity {
     }
 }
 
-extension SearchResultEntity {
-    func toViewModel() -> SearchResultViewModel {
-        .init(
-            trackId: self.trackId,
-            trackName: self.trackName, 
-            screenshotUrls: self.screenshotUrls,
-            artistName: self.artistName,
-            genre: self.genres.first ?? "",
-            artworkUrl60: self.artworkUrl60
-        )
+extension SearchResultEntity: Identifiable {
+    var id: Int {
+        return trackId
     }
 }

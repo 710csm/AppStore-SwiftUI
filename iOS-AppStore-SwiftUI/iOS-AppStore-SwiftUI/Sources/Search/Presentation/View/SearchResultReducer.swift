@@ -24,7 +24,7 @@ struct SearchResultReducer {
         
         var isInitalized: Bool = false
         var showingState: SearchState = .showingResult
-        var searchResults: [SearchResultViewModel] = []
+        var searchResults: [SearchResultEntity] = []
         var countLimit: Int = searchCountLimitUnit
         var isLimit: Bool {
           countLimit >= searchCountMaxLimit
@@ -71,9 +71,6 @@ struct SearchResultReducer {
                     return .none
                 }
                 
-                guard state.showingState == .loading else {
-                    return .none
-                }
                 
                 state.isInitalized = true
                 state.showingState = .loading
@@ -87,7 +84,7 @@ struct SearchResultReducer {
                     state.searchResults = []
                     state.showingState = .showingEmpty
                 } else {
-                    state.searchResults = response.map { $0.toViewModel() }
+                    state.searchResults = response
                     state.showingState = .showingResult
                     state.countLimit += Self.searchCountLimitUnit
                 }

@@ -36,7 +36,7 @@
 		029A99362C5B28DF00A52510 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 029A99352C5B28DF00A52510 /* NetworkKit */; };
 		029A99382C5B28DF00A52510 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 029A99372C5B28DF00A52510 /* Utils */; };
 		029A993C2C5B49A000A52510 /* AppDetailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 029A993B2C5B49A000A52510 /* AppDetailKit */; };
-		029A99432C5B5F3900A52510 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A99422C5B5F3900A52510 /* SearchResultViewModel.swift */; };
+		029A99462C5C77BF00A52510 /* TCACoordinators in Frameworks */ = {isa = PBXBuildFile; productRef = 029A99452C5C77BF00A52510 /* TCACoordinators */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,6 @@
 		029A99302C5B287A00A52510 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utils; sourceTree = "<group>"; };
 		029A99312C5B28AF00A52510 /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		029A993A2C5B2A3100A52510 /* AppDetailKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppDetailKit; sourceTree = "<group>"; };
-		029A99422C5B5F3900A52510 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +99,7 @@
 				029A992D2C5B280B00A52510 /* ComposableArchitecture in Frameworks */,
 				029A993C2C5B49A000A52510 /* AppDetailKit in Frameworks */,
 				029A99382C5B28DF00A52510 /* Utils in Frameworks */,
+				029A99462C5C77BF00A52510 /* TCACoordinators in Frameworks */,
 				029A99342C5B28DF00A52510 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +267,6 @@
 		029A990B2C5B27AD00A52510 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				029A99412C5B5F2D00A52510 /* ViewModel */,
 				029A99402C5B5F2600A52510 /* View */,
 			);
 			path = Presentation;
@@ -327,14 +326,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		029A99412C5B5F2D00A52510 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				029A99422C5B5F3900A52510 /* SearchResultViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +348,7 @@
 				029A99352C5B28DF00A52510 /* NetworkKit */,
 				029A99372C5B28DF00A52510 /* Utils */,
 				029A993B2C5B49A000A52510 /* AppDetailKit */,
+				029A99452C5C77BF00A52510 /* TCACoordinators */,
 			);
 			productName = "iOS-AppStore-SwiftUI";
 			productReference = 029A98B52C5B271700A52510 /* iOS-AppStore-SwiftUI.app */;
@@ -432,6 +424,7 @@
 			mainGroup = 029A98AC2C5B271700A52510;
 			packageReferences = (
 				029A992B2C5B280B00A52510 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				029A99442C5C77BF00A52510 /* XCRemoteSwiftPackageReference "TCACoordinators" */,
 			);
 			productRefGroup = 029A98B62C5B271700A52510 /* Products */;
 			projectDirPath = "";
@@ -478,7 +471,6 @@
 				029A99222C5B27AD00A52510 /* RecentSearchRepositoryProtocol.swift in Sources */,
 				029A99192C5B27AD00A52510 /* RecentSearch.swift in Sources */,
 				029A99242C5B27AD00A52510 /* FetchRecentSearchUseCase.swift in Sources */,
-				029A99432C5B5F3900A52510 /* SearchResultViewModel.swift in Sources */,
 				029A98BB2C5B271700A52510 /* ContentView.swift in Sources */,
 				029A99202C5B27AD00A52510 /* RecentSearchRepository.swift in Sources */,
 				029A99212C5B27AD00A52510 /* SearchRepository.swift in Sources */,
@@ -844,6 +836,14 @@
 				minimumVersion = 1.12.1;
 			};
 		};
+		029A99442C5C77BF00A52510 /* XCRemoteSwiftPackageReference "TCACoordinators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/TCACoordinators";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -867,6 +867,11 @@
 		029A993B2C5B49A000A52510 /* AppDetailKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppDetailKit;
+		};
+		029A99452C5C77BF00A52510 /* TCACoordinators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 029A99442C5C77BF00A52510 /* XCRemoteSwiftPackageReference "TCACoordinators" */;
+			productName = TCACoordinators;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
