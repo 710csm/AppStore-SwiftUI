@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RecentSearchRepositoryProtocol {
+public protocol RecentSearchRepositoryProtocol {
     func fetchRecentSearchList() async -> RecentSearchResponse
     func saveRecentSearchKeyword(keyword: String)
 }

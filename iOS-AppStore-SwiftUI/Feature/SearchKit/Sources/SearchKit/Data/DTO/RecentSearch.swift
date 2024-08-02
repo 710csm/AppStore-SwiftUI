@@ -8,12 +8,12 @@
 import Foundation
 import SwiftData
 
-struct RecentSearchResponse {
+public struct RecentSearchResponse {
     let results: [RecentSearch]
 }
 
 @Model
-final class RecentSearch: Identifiable {
+public final class RecentSearch: Identifiable {
     @Attribute(.unique) var keyword: String
     var timeStamp: Date
     

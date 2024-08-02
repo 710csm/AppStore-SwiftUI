@@ -10,15 +10,15 @@ import SwiftUI
 
 import Utils
 
-struct RecentSearchRepository: RecentSearchRepositoryProtocol {
+public struct RecentSearchRepository: RecentSearchRepositoryProtocol {
     
     private let modelContext: ModelContext
     
-    init(modelContext: ModelContext) {
+    public init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }
     
-    func fetchRecentSearchList() async -> RecentSearchResponse {
+    public func fetchRecentSearchList() async -> RecentSearchResponse {
         do {
             let sort = [SortDescriptor<RecentSearch>(\.timeStamp, order: .reverse)]
             let desciptor = FetchDescriptor<RecentSearch>(sortBy: sort)
@@ -30,7 +30,7 @@ struct RecentSearchRepository: RecentSearchRepositoryProtocol {
         }
     }
     
-    func saveRecentSearchKeyword(keyword: String) {
+    public func saveRecentSearchKeyword(keyword: String) {
         let recentSearch = RecentSearch(keyword: keyword, timeStamp: Date())
         modelContext.insert(recentSearch)
     }

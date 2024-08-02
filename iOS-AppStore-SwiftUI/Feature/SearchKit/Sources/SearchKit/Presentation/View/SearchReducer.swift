@@ -10,12 +10,12 @@ import SwiftUI
 import ComposableArchitecture
 
 @Reducer
-struct SearchReducer {
+public struct SearchReducer {
     
     // MARK: - State
     
     @ObservableState
-    struct State: Equatable {
+    public struct State: Equatable {
         enum SearchState {
             case none
             case searching
@@ -27,11 +27,18 @@ struct SearchReducer {
         var showingState: SearchState = .none
         var suggestions: [RecentSearch] = []
         var histories: [RecentSearch] = []
+        
+        public init() {
+            self.searchText = ""
+            self.showingState = .none
+            self.suggestions = []
+            self.histories = []
+        }
     }
     
     // MARK: - Action
     
-    enum Action {
+    public enum Action {
         case fetchRecentSearch
         case saveRecentSearch(String)
         case recentSearchResponse(RecentSearchResponse)
@@ -47,7 +54,7 @@ struct SearchReducer {
     
     // MARK: - Init
     
-    init(
+    public init(
         recentSearchUseCase: FetchRecentSearchUseCaseProtocol,
         saveRecentSearchUseCase: SaveRecentSearchUseCaseProtocol
     ) {
@@ -57,7 +64,7 @@ struct SearchReducer {
     
     // MARK: - Body
     
-    var body: some Reducer<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .fetchRecentSearch:

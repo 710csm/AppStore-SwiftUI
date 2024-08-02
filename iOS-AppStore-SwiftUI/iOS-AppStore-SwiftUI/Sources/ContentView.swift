@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+import SearchKit
 import ComposableArchitecture
 
 struct ContentView: View {

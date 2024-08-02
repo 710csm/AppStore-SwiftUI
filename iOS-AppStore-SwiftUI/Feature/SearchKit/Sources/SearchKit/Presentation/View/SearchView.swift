@@ -11,15 +11,21 @@ import AppDetailKit
 import ComposableArchitecture
 import DesignSystem
 
-struct SearchView: View {
+public struct SearchView: View {
     
     // MARK: - Properties
     
     @Bindable var store: StoreOf<SearchReducer>
     
+    // MARK: - Init
+    
+    public init(store: StoreOf<SearchReducer>) {
+        self.store = store
+    }
+    
     // MARK: - Body
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             showingList
                 .navigationTitle(AppText.searchBarTitle)

@@ -7,19 +7,19 @@
 
 import ComposableArchitecture
 
-protocol FetchSearchUseCaseProtocol {
+public protocol FetchSearchUseCaseProtocol {
     func execute(keyword: String, countLimit: Int) async -> [SearchResultEntity]
 }
 
-struct FetchSearchUseCase: FetchSearchUseCaseProtocol {
+public struct FetchSearchUseCase: FetchSearchUseCaseProtocol {
 
     private let searchRepository: SearchRepositoryProtocol
 
-    init(searchRepository: SearchRepositoryProtocol) {
+    public init(searchRepository: SearchRepositoryProtocol) {
         self.searchRepository = searchRepository
     }
 
-    func execute(keyword: String, countLimit: Int) async -> [SearchResultEntity] {
+    public func execute(keyword: String, countLimit: Int) async -> [SearchResultEntity] {
         if !keyword.isEmpty {
             return await searchRepository.fetchSearchList(keyword: keyword, countLimit: countLimit)
         } else {
@@ -36,7 +36,7 @@ extension DependencyValues {
 }
 
 extension FetchSearchUseCase: DependencyKey {
-    static var liveValue: FetchSearchUseCase {
+    public static var liveValue: FetchSearchUseCase {
         return Self(
             searchRepository: SearchRepository(
                 remoteSearchDataSource: RemoteSearchDataSource()

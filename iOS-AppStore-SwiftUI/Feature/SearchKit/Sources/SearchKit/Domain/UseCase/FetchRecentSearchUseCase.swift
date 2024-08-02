@@ -5,19 +5,19 @@
 //  Created by 최승명 on 7/27/24.
 //
 
-protocol FetchRecentSearchUseCaseProtocol {
+public protocol FetchRecentSearchUseCaseProtocol {
     func execute() async -> RecentSearchResponse
 }
 
-struct FetchRecentSearchUseCase: FetchRecentSearchUseCaseProtocol {
+public struct FetchRecentSearchUseCase: FetchRecentSearchUseCaseProtocol {
 
     private let recentSearchRepository: RecentSearchRepositoryProtocol
 
-    init(recentSearchRepository: RecentSearchRepositoryProtocol) {
+    public init(recentSearchRepository: RecentSearchRepositoryProtocol) {
         self.recentSearchRepository = recentSearchRepository
     }
 
-    func execute() async -> RecentSearchResponse {
+    public func execute() async -> RecentSearchResponse {
         return await recentSearchRepository.fetchRecentSearchList()
     }
 }
