@@ -13,28 +13,28 @@ public enum SearchAPI {
 }
 
 extension SearchAPI: BaseAPI {
-    var domain: BaseDomain {
+    public var domain: BaseDomain {
         switch self {
         default:
             return .search
         }
     }
     
-    var urlPath: String {
+    public var urlPath: String {
         switch self {
         case .fetchSearchList:
             return ""
         }
     }
     
-    var method: Moya.Method {
+    public var method: Moya.Method {
         switch self {
         default:
             return .get
         }
     }
     
-    var task: Moya.Task {
+    public var task: Moya.Task {
         switch self {
         case let .fetchSearchList(keyword, countLimit):
             return .requestParameters(
@@ -49,7 +49,7 @@ extension SearchAPI: BaseAPI {
         }
     }
 
-    var errorMap: [Int: NetworkError] {
+    public var errorMap: [Int: NetworkError] {
         switch self {
         default:
             return [

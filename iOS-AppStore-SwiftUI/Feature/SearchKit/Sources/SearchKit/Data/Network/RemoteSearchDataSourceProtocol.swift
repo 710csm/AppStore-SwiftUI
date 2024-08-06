@@ -7,6 +7,6 @@
 
 import NetworkKit
 
-public public protocol RemoteSearchDataSourceProtocol {
+public protocol RemoteSearchDataSourceProtocol {
     func fetchSearchList(keyword: String, countLimit: Int) async -> SearchResponse
 }

@@ -15,7 +15,7 @@ final class RemoteSearchDataSource: BaseRemoteDataSource<SearchAPI>, RemoteSearc
                 .map(SearchResponse.self)
         } catch {
             Log.error(error.localizedDescription)
-            return .init(resultCount: 0, results: [])
+            return SearchResponse()
         }
     }
 }
