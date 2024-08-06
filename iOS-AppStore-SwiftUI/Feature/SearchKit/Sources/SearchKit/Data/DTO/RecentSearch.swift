@@ -10,6 +10,10 @@ import SwiftData
 
 public struct RecentSearchResponse {
     let results: [RecentSearch]
+    
+    public init(results: [RecentSearch]) {
+        self.results = results
+    }
 }
 
 @Model
@@ -17,7 +21,7 @@ public final class RecentSearch: Identifiable {
     @Attribute(.unique) var keyword: String
     var timeStamp: Date
     
-    init(keyword: String, timeStamp: Date) {
+    public init(keyword: String, timeStamp: Date) {
         self.keyword = keyword
         self.timeStamp = timeStamp
     }
