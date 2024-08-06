@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0242B7A82C61B5BD00C1CA4D /* TestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 0242B7A72C61B5BD00C1CA4D /* TestUtils */; };
+		0242B7AB2C61B5F300C1CA4D /* MockResponseJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 0242B7AA2C61B5F300C1CA4D /* MockResponseJSON.json */; };
+		0242B7AD2C61B60400C1CA4D /* RemoteMockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242B7AC2C61B60400C1CA4D /* RemoteMockDataSource.swift */; };
+		0242B7AF2C61B7BA00C1CA4D /* SearchKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0242B7AE2C61B7BA00C1CA4D /* SearchKit */; };
 		029A98B92C5B271700A52510 /* iOS_AppStore_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98B82C5B271700A52510 /* iOS_AppStore_SwiftUIApp.swift */; };
 		029A98BB2C5B271700A52510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98BA2C5B271700A52510 /* ContentView.swift */; };
 		029A98BD2C5B271800A52510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029A98BC2C5B271800A52510 /* Assets.xcassets */; };
@@ -15,7 +19,6 @@
 		029A98D42C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98D32C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift */; };
 		029A98D62C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98D52C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift */; };
 		029A992D2C5B280B00A52510 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 029A992C2C5B280B00A52510 /* ComposableArchitecture */; };
-		029A994D2C5CC31E00A52510 /* SearchKit in Frameworks */ = {isa = PBXBuildFile; productRef = 029A994C2C5CC31E00A52510 /* SearchKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0242B7AA2C61B5F300C1CA4D /* MockResponseJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockResponseJSON.json; sourceTree = "<group>"; };
+		0242B7AC2C61B60400C1CA4D /* RemoteMockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMockDataSource.swift; sourceTree = "<group>"; };
 		029A98B52C5B271700A52510 /* iOS-AppStore-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-AppStore-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029A98B82C5B271700A52510 /* iOS_AppStore_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AppStore_SwiftUIApp.swift; sourceTree = "<group>"; };
 		029A98BA2C5B271700A52510 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029A992D2C5B280B00A52510 /* ComposableArchitecture in Frameworks */,
-				029A994D2C5CC31E00A52510 /* SearchKit in Frameworks */,
+				0242B7AF2C61B7BA00C1CA4D /* SearchKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0242B7A82C61B5BD00C1CA4D /* TestUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0242B7A92C61B5E300C1CA4D /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0242B7AA2C61B5F300C1CA4D /* MockResponseJSON.json */,
+				0242B7AC2C61B60400C1CA4D /* RemoteMockDataSource.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		029A98AC2C5B271700A52510 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 		029A98C82C5B271800A52510 /* iOS-AppStore-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0242B7A92C61B5E300C1CA4D /* Mock */,
 				029A98C92C5B271800A52510 /* iOS_AppStore_SwiftUITests.swift */,
 			);
 			path = "iOS-AppStore-SwiftUITests";
@@ -199,7 +215,7 @@
 			name = "iOS-AppStore-SwiftUI";
 			packageProductDependencies = (
 				029A992C2C5B280B00A52510 /* ComposableArchitecture */,
-				029A994C2C5CC31E00A52510 /* SearchKit */,
+				0242B7AE2C61B7BA00C1CA4D /* SearchKit */,
 			);
 			productName = "iOS-AppStore-SwiftUI";
 			productReference = 029A98B52C5B271700A52510 /* iOS-AppStore-SwiftUI.app */;
@@ -219,6 +235,9 @@
 				029A98C72C5B271800A52510 /* PBXTargetDependency */,
 			);
 			name = "iOS-AppStore-SwiftUITests";
+			packageProductDependencies = (
+				0242B7A72C61B5BD00C1CA4D /* TestUtils */,
+			);
 			productName = "iOS-AppStore-SwiftUITests";
 			productReference = 029A98C52C5B271800A52510 /* iOS-AppStore-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -301,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0242B7AB2C61B5F300C1CA4D /* MockResponseJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0242B7AD2C61B60400C1CA4D /* RemoteMockDataSource.swift in Sources */,
 				029A98CA2C5B271800A52510 /* iOS_AppStore_SwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,7 +573,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KFAFLC3XW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "choism.iOS-AppStore-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,7 +593,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KFAFLC3XW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "choism.iOS-AppStore-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,14 +693,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0242B7A72C61B5BD00C1CA4D /* TestUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TestUtils;
+		};
+		0242B7AE2C61B7BA00C1CA4D /* SearchKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SearchKit;
+		};
 		029A992C2C5B280B00A52510 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 029A992B2C5B280B00A52510 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		029A994C2C5CC31E00A52510 /* SearchKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SearchKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

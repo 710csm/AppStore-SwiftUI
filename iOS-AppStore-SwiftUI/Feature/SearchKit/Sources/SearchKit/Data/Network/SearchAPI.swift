@@ -8,7 +8,7 @@
 import NetworkKit
 import Moya
 
-enum SearchAPI {
+public enum SearchAPI {
     case fetchSearchList(keyword: String, countLimit: Int)
 }
 

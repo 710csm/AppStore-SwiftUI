@@ -10,6 +10,11 @@ import Foundation
 public struct SearchResponse: Decodable {
     let resultCount: Int
     let results: [SearchResultDTO]
+    
+    public init() {
+        self.resultCount = 0
+        self.results = []
+    }
 }
 
 struct SearchResultDTO: Codable {

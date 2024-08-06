@@ -14,7 +14,6 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "./AppDetailKit"),
-        .package(path: "./DesignSystem"),
         .package(path: "./NetworkKit"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture/", .upToNextMajor(from: "1.12.1"))
     ],
@@ -23,7 +22,6 @@ let package = Package(
             name: "SearchKit",
             dependencies: [
                 .product(name: "AppDetailKit", package: "AppDetailKit"),
-                .product(name: "DesignSystem", package: "DesignSystem"),
                 .product(name: "NetworkKit", package: "NetworkKit"),
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]
