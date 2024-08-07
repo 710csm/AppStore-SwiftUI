@@ -17,10 +17,9 @@
 		029A98BB2C5B271700A52510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98BA2C5B271700A52510 /* ContentView.swift */; };
 		029A98BD2C5B271800A52510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029A98BC2C5B271800A52510 /* Assets.xcassets */; };
 		029A98C02C5B271800A52510 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029A98BF2C5B271800A52510 /* Preview Assets.xcassets */; };
-		029A98D42C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98D32C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift */; };
-		029A98D62C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029A98D52C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift */; };
 		029A992D2C5B280B00A52510 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 029A992C2C5B280B00A52510 /* ComposableArchitecture */; };
 		029AF80C2C6303350079DE5E /* SearchResultReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029AF80B2C6303350079DE5E /* SearchResultReducerTests.swift */; };
+		029AF80F2C630D760079DE5E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 029AF80E2C630D760079DE5E /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +51,6 @@
 		029A98BF2C5B271800A52510 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		029A98C52C5B271800A52510 /* iOS-AppStore-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-AppStore-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029A98CF2C5B271800A52510 /* iOS-AppStore-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-AppStore-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		029A98D32C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AppStore_SwiftUIUITests.swift; sourceTree = "<group>"; };
-		029A98D52C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AppStore_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		029A992F2C5B283D00A52510 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 		029A99302C5B287A00A52510 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utils; sourceTree = "<group>"; };
 		029A99312C5B28AF00A52510 /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
@@ -84,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029AF80F2C630D760079DE5E /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +152,7 @@
 		029A98D22C5B271800A52510 /* iOS-AppStore-SwiftUIUITests */ = {
 			isa = PBXGroup;
 			children = (
-				029A98D32C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift */,
-				029A98D52C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift */,
+				029AF8102C630D950079DE5E /* SnapShot */,
 			);
 			path = "iOS-AppStore-SwiftUIUITests";
 			sourceTree = "<group>";
@@ -201,6 +198,13 @@
 				029A993A2C5B2A3100A52510 /* AppDetailKit */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		029AF8102C630D950079DE5E /* SnapShot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SnapShot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +266,9 @@
 				029A98D12C5B271800A52510 /* PBXTargetDependency */,
 			);
 			name = "iOS-AppStore-SwiftUIUITests";
+			packageProductDependencies = (
+				029AF80E2C630D760079DE5E /* SnapshotTesting */,
+			);
 			productName = "iOS-AppStore-SwiftUIUITests";
 			productReference = 029A98CF2C5B271800A52510 /* iOS-AppStore-SwiftUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -300,6 +307,7 @@
 			mainGroup = 029A98AC2C5B271700A52510;
 			packageReferences = (
 				029A992B2C5B280B00A52510 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				029AF80D2C630D760079DE5E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 029A98B62C5B271700A52510 /* Products */;
 			projectDirPath = "";
@@ -364,8 +372,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				029A98D62C5B271800A52510 /* iOS_AppStore_SwiftUIUITestsLaunchTests.swift in Sources */,
-				029A98D42C5B271800A52510 /* iOS_AppStore_SwiftUIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +720,14 @@
 				minimumVersion = 1.12.1;
 			};
 		};
+		029AF80D2C630D760079DE5E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +743,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 029A992B2C5B280B00A52510 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		029AF80E2C630D760079DE5E /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 029AF80D2C630D760079DE5E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
