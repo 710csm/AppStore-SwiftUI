@@ -55,6 +55,7 @@ struct SearchResultView: View {
             }
             .listStyle(.plain)
             .animation(.easeInOut, value: store.state.searchResults)
+            .accessibilityIdentifier("searchResultList") // 각 항목에 identifier 설정
         case .loading:
             ProgressView()
                 .progressViewStyle(.circular)
