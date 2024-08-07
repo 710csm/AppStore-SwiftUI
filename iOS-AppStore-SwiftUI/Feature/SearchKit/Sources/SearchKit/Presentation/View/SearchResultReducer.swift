@@ -10,30 +10,37 @@ import SwiftUI
 import ComposableArchitecture
 
 @Reducer
-struct SearchResultReducer {
+public struct SearchResultReducer {
     
     // MARK: - State
     
     @ObservableState
-    struct State: Equatable {
-        enum SearchState {
+    public struct State: Equatable {
+        public enum SearchState {
             case loading
             case showingResult
             case showingEmpty
         }
         
-        var isInitalized: Bool = false
-        var showingState: SearchState = .showingResult
-        var searchResults: [SearchResultEntity] = []
-        var countLimit: Int = searchCountLimitUnit
-        var isLimit: Bool {
+        public var isInitalized: Bool = false
+        public var showingState: SearchState = .showingResult
+        public var searchResults: [SearchResultEntity] = []
+        public var countLimit: Int = searchCountLimitUnit
+        public var isLimit: Bool {
           countLimit >= searchCountMaxLimit
+        }
+        
+        public init() {
+            self.isInitalized = false
+            self.showingState = .showingResult
+            self.searchResults = []
+            self.countLimit = searchCountLimitUnit
         }
     }
     
     // MARK: - Action
     
-    enum Action {
+    public enum Action {
         case loadMore
         case executeSearch
         case searchResponse([SearchResultEntity])
@@ -41,22 +48,23 @@ struct SearchResultReducer {
     
     // MARK: - Properties
     
-    @Dependency(\.fetchSearchUseCase) var fetchSearchUseCase
-    
     private static let searchCountLimitUnit: Int = 20
     private static let searchCountMaxLimit: Int = 200
+    
+    private let fetchSearchUseCase: FetchSearchUseCaseProtocol
     
     private var searchText: String = ""
     
     // MARK: - Init
     
-    init(searchText: String) {
+    public init(searchText: String, fetchSearchUseCase: FetchSearchUseCaseProtocol) {
         self.searchText = searchText
+        self.fetchSearchUseCase = fetchSearchUseCase
     }
     
     // MARK: - Body
     
-    var body: some Reducer<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .loadMore:

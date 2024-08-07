@@ -63,7 +63,14 @@ public struct SearchView: View {
         case .showingResult:
             SearchResultView(
                 store: Store(initialState: SearchResultReducer.State()) {
-                    SearchResultReducer(searchText: store.searchText)
+                    SearchResultReducer(
+                        searchText: store.searchText,
+                        fetchSearchUseCase: FetchSearchUseCase(
+                            searchRepository: SearchRepository(
+                                remoteSearchDataSource: RemoteSearchDataSource()
+                            )
+                        )
+                    )
                 }
             )
         case .loading:
