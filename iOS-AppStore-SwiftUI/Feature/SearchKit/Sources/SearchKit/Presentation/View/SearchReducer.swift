@@ -16,17 +16,17 @@ public struct SearchReducer {
     
     @ObservableState
     public struct State: Equatable {
-        enum SearchState {
+        public enum SearchState {
             case none
             case searching
             case loading
             case showingResult
         }
         
-        var searchText: String = ""
-        var showingState: SearchState = .none
-        var suggestions: [RecentSearch] = []
-        var histories: [RecentSearch] = []
+        public var searchText: String = ""
+        public var showingState: SearchState = .none
+        public var suggestions: [RecentSearch] = []
+        public var histories: [RecentSearch] = []
         
         public init() {
             self.searchText = ""
