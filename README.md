@@ -20,6 +20,11 @@
 - SnapShot Test
     - AppDetailView 스냅샷 테스트
 
+## 스크린 샷
+| 검색 탭 | 검색 결과 | 상세 화면 |
+| -------- | -------- | -------- |
+|  ![검색 탭](https://github.com/user-attachments/assets/970ce678-ee9b-4da1-9991-5ce6dab77c6b)  |  ![검색 결과](https://github.com/user-attachments/assets/c71f5961-5415-4466-b920-bab24fb33fee) |  ![상세 화면](https://github.com/user-attachments/assets/1e877131-52b3-40c2-8d21-84e04fad2c5c) |
+
 ## Message
 - 이모지[이슈번호]: 커밋메세지
 - ex) ✨[#02]: 컴포넌트 작업
