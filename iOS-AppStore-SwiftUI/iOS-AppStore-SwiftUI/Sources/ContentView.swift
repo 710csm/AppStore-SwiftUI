@@ -16,15 +16,25 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Text("The First Tab")
+            Text("투데이 탭")
                 .tabItem {
-                    Image(systemName: "1.square.fill")
-                    Text("First")
+                    Image(systemName: "doc.text.image")
+                    Text("투데이")
                 }
-            Text("Another Tab")
+            Text("게임 탭")
                 .tabItem {
-                    Image(systemName: "2.square.fill")
-                    Text("Second")
+                    Image(systemName: "gamecontroller")
+                    Text("게임")
+                }
+            Text("앱 탭")
+                .tabItem {
+                    Image(systemName: "square.stack.3d.up.fill")
+                    Text("앱")
+                }
+            Text("아케이드 탭")
+                .tabItem {
+                    Image(systemName: "arcade.stick")
+                    Text("Arcade")
                 }
             SearchView(
                 store: Store(initialState: SearchReducer.State()) {
@@ -39,8 +49,8 @@ struct ContentView: View {
                 }
             )
             .tabItem {
-                Image(systemName: "3.square.fill")
-                Text("Third")
+                Image(systemName: "magnifyingglass")
+                Text("검색")
             }
         }
         .font(.headline)
