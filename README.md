@@ -1,5 +1,29 @@
 # AppStore-SwiftUI
 
+## 프로젝트 정보
+- 사용한 개발 언어: Swift
+- 사용한 UI 프레임워크: SwiftUI
+- 사용한 디자인 패턴: TCA + Clean Architecture
+- 사용한 라이브러리
+    - CocoaLumberjack: Log
+    - SwiftData: Database 
+    - Moya: Network 
+    - swift-snapthot-testing: SnapShot Test
+
+---    
+
+## 테스트
+- Unit Test
+    - NetworkKit 모듈 유닛 테스트
+    - SearchReducer 유닛 테스트
+    - SearchResultReducer 유닛 테스트
+- UI Test
+    - 검색 과정 UI Test
+- SnapShot Test
+    - AppDetailView 스냅샷 테스트
+    
+---
+
 ## Message
 - 이모지[이슈번호]: 커밋메세지
 - ex) ✨[#02]: 컴포넌트 작업
