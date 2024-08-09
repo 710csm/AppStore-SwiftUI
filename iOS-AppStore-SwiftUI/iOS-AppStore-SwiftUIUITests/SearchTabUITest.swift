@@ -21,7 +21,7 @@ final class SearchTabUITest: XCTestCase {
         app.launch()
 
         // 검색 탭을 찾아서 이동
-        let searchTab = app.tabBars.buttons["Third"]
+        let searchTab = app.tabBars.buttons["검색"]
         XCTAssertTrue(searchTab.exists, "Search tap should exist")
         
         searchTab.tap()
