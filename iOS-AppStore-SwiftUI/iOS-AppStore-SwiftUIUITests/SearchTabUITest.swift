@@ -16,10 +16,8 @@ final class SearchTabUITest: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testExample() throws {
+    func testSearchProcess() throws {
         let app = XCUIApplication()
-        app.launchArguments += ["-AppleLanguages", "(ko)"]
-        app.launchArguments += ["-AppleLocale", "ko_KR"]
         app.launch()
 
         // 검색 탭을 찾아서 이동
@@ -36,10 +34,15 @@ final class SearchTabUITest: XCTestCase {
         searchField.typeText("Kakao")
         
         // 검색어 입력 후 키보드의 검색 버튼 터치
-        let doneButton = app.buttons["search"] // "search" 또는 "검색"
+        let doneButton = app.buttons["검색"] // "search" 또는 "검색"
         doneButton.tap()
         
         sleep(2)
+        
+        // 위, 아래로 스크롤
+        app.swipeUp()
+        sleep(1)
+        app.swipeDown()
         
         // 검색 결과에서 첫번째 아이템을 선택
         let cell = app.collectionViews["searchResultList"].cells.element(boundBy: 0).buttons.firstMatch
@@ -58,7 +61,7 @@ final class SearchTabUITest: XCTestCase {
         goBackButton.tap()
         
         // 검색창의 취소 버튼 탭
-        let cancelButton = app.navigationBars.buttons["Cancel"]
+        let cancelButton = app.navigationBars.buttons["취소"] // "Cancel" 또는 "취소"
         cancelButton.tap()
     }
 }
