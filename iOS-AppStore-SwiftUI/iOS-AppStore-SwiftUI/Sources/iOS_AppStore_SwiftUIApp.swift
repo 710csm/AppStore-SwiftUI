@@ -8,6 +8,7 @@
 import SwiftData
 import SwiftUI
 
+import SearchKit
 import Utils
 
 @main

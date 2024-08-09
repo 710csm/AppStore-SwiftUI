@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+import SearchKit
 import ComposableArchitecture
 
 struct ContentView: View {
@@ -44,8 +45,4 @@ struct ContentView: View {
         }
         .font(.headline)
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -11,6 +11,10 @@ let package = Package(
             name: "Utils",
             targets: ["Utils"]
         ),
+        .library(
+            name: "TestUtils",
+            targets: ["TestUtils"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", .upToNextMajor(from: "3.8.0")),
@@ -21,6 +25,11 @@ let package = Package(
             dependencies: [
                 .product(name: "CocoaLumberjack", package: "CocoaLumberjack"),
                 .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack"),
+            ]
+        ),
+        .target(
+            name: "TestUtils",
+            dependencies: [
             ]
         ),
     ]
