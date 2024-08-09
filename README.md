@@ -10,8 +10,6 @@
     - Moya: Network 
     - swift-snapthot-testing: SnapShot Test
 
----    
-
 ## 테스트
 - Unit Test
     - NetworkKit 모듈 유닛 테스트
@@ -21,8 +19,6 @@
     - 검색 과정 UI Test
 - SnapShot Test
     - AppDetailView 스냅샷 테스트
-    
----
 
 ## Message
 - 이모지[이슈번호]: 커밋메세지
