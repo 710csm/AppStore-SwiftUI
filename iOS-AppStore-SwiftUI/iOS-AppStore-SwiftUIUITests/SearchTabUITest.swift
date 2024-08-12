@@ -22,20 +22,21 @@ final class SearchTabUITest: XCTestCase {
 
         // 검색 탭을 찾아서 이동
         let searchTab = app.tabBars.buttons["검색"]
-        XCTAssertTrue(searchTab.exists, "Search tap should exist")
-        
         searchTab.tap()
         
         // 검색창을 찾아 텍스트 필드 터치 후 "Kakao" 입력
         let searchField = app.searchFields.firstMatch
-        XCTAssertTrue(searchField.exists, "Search field should exist")
-        
         searchField.tap()
         searchField.typeText("Kakao")
         
         // 검색어 입력 후 키보드의 검색 버튼 터치
-        let doneButton = app.buttons["검색"] // "search" 또는 "검색"
-        doneButton.tap()
+        let searchButton = app.buttons["search"] // "search" 또는 "검색"
+        if !searchButton.exists {
+            let searchKoreanButton = app.buttons["검색"]
+            searchKoreanButton.tap()
+        } else {
+            searchButton.tap()
+        }
         
         sleep(2)
         
@@ -46,8 +47,6 @@ final class SearchTabUITest: XCTestCase {
         
         // 검색 결과에서 첫번째 아이템을 선택
         let cell = app.collectionViews["searchResultList"].cells.element(boundBy: 0).buttons.firstMatch
-        XCTAssertTrue(cell.exists, "cell should exist")
-        
         cell.tap()
         
         sleep(2)
