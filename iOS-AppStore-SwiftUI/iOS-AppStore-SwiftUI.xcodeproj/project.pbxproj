@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020D1F5A2C69D0F1003EB821 /* AppTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppTestPlan.xctestplan; sourceTree = "<group>"; };
 		0242B7AA2C61B5F300C1CA4D /* MockResponseJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockResponseJSON.json; sourceTree = "<group>"; };
 		0242B7AC2C61B60400C1CA4D /* RemoteSearchMockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSearchMockDataSource.swift; sourceTree = "<group>"; };
 		0242B7B02C61BB0000C1CA4D /* RecentSearchMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchMockRepository.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		029A98AC2C5B271700A52510 = {
 			isa = PBXGroup;
 			children = (
+				020D1F5A2C69D0F1003EB821 /* AppTestPlan.xctestplan */,
 				029A99392C5B2A1200A52510 /* Feature */,
 				029A992E2C5B281600A52510 /* Core */,
 				029A98B72C5B271700A52510 /* iOS-AppStore-SwiftUI */,

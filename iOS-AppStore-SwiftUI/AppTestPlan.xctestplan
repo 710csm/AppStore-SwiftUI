@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "DAF0E01F-6F8E-48B9-B626-39A25DA4CFD0",
+      "name" : "Default Configuration",
+      "options" : {
+        "language" : "ko",
+        "region" : "KR"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:iOS-AppStore-SwiftUI.xcodeproj",
+        "identifier" : "029A98C42C5B271800A52510",
+        "name" : "iOS-AppStore-SwiftUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:iOS-AppStore-SwiftUI.xcodeproj",
+        "identifier" : "029A98CE2C5B271800A52510",
+        "name" : "iOS-AppStore-SwiftUIUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core\/NetworkKit",
+        "identifier" : "NetworkKitTests",
+        "name" : "NetworkKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
