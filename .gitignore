@@ -111,3 +111,6 @@ iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
 .DS_Store
+
+# SnapShot Test
+**/SnapShot/__Snapshots__
