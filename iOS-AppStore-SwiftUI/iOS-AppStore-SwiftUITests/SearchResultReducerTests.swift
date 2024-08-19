@@ -16,23 +16,12 @@ import SearchKit
 
 final class SearchResultReducerTests: XCTestCase {
 
-    // MARK: - Properties
-    
-    private var remoteDataSource: RemoteSearchDataSourceProtocol!
-    private var repository: SearchRepositoryProtocol!
-    private var fetchSearchUseCase: FetchSearchUseCaseProtocol!
-
     // MARK: - Test Setting
     
     override func setUpWithError() throws {
-        self.remoteDataSource = RemoteSearchMockDataSource()
-        self.repository = SearchRepository(remoteSearchDataSource: remoteDataSource)
-        self.fetchSearchUseCase = FetchSearchUseCase(searchRepository: repository)
     }
 
     override func tearDownWithError() throws {
-        self.repository = nil
-        self.fetchSearchUseCase = nil
     }
     
     // MARK: - Test
@@ -43,7 +32,7 @@ final class SearchResultReducerTests: XCTestCase {
         let store = TestStore(initialState: SearchResultReducer.State()) {
             SearchResultReducer(
                 searchText: "test",
-                fetchSearchUseCase: fetchSearchUseCase
+                fetchSearchUseCase: FetchSearchUseCase.testValue
             )
         }
         store.exhaustivity = .off
@@ -61,7 +50,7 @@ final class SearchResultReducerTests: XCTestCase {
         let store = TestStore(initialState: SearchResultReducer.State()) {
             SearchResultReducer(
                 searchText: "test",
-                fetchSearchUseCase: fetchSearchUseCase
+                fetchSearchUseCase: FetchSearchUseCase.testValue
             )
         }
         store.exhaustivity = .off
@@ -80,7 +69,7 @@ final class SearchResultReducerTests: XCTestCase {
         let store = TestStore(initialState: SearchResultReducer.State()) {
             SearchResultReducer(
                 searchText: "test",
-                fetchSearchUseCase: fetchSearchUseCase
+                fetchSearchUseCase: FetchSearchUseCase.testValue
             )
         }
         store.exhaustivity = .off
@@ -99,7 +88,7 @@ final class SearchResultReducerTests: XCTestCase {
         let store = TestStore(initialState: SearchResultReducer.State()) {
             SearchResultReducer(
                 searchText: "test",
-                fetchSearchUseCase: fetchSearchUseCase
+                fetchSearchUseCase: FetchSearchUseCase.testValue
             )
         }
         store.exhaustivity = .off

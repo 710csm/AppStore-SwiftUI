@@ -27,3 +27,13 @@ public struct FetchSearchUseCase: FetchSearchUseCaseProtocol {
         }
     }
 }
+
+extension FetchSearchUseCase: DependencyKey {
+    public static var liveValue: FetchSearchUseCase {
+        return Self(
+            searchRepository: SearchRepository(
+                remoteSearchDataSource: RemoteSearchDataSource()
+            )
+        )
+    }
+}

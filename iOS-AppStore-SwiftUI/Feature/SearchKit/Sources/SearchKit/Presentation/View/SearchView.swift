@@ -65,11 +65,7 @@ public struct SearchView: View {
                 store: Store(initialState: SearchResultReducer.State()) {
                     SearchResultReducer(
                         searchText: store.searchText,
-                        fetchSearchUseCase: FetchSearchUseCase(
-                            searchRepository: SearchRepository(
-                                remoteSearchDataSource: RemoteSearchDataSource()
-                            )
-                        )
+                        fetchSearchUseCase: FetchSearchUseCase.liveValue
                     )
                 }
             )
