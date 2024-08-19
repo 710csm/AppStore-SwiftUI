@@ -22,7 +22,7 @@ public final class RecentSearchMockRepository: RecentSearchRepositoryProtocol {
         return RecentSearchResponse(results: dataList)
     }
     
-    public func  saveRecentSearchKeyword(keyword: String) {
+    public func saveRecentSearchKeyword(keyword: String) {
         dataList.append(RecentSearch(keyword: keyword, timeStamp: Date()))
     }
 }
