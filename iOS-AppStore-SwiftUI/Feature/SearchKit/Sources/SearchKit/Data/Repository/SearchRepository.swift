@@ -14,6 +14,9 @@ public struct SearchRepository: SearchRepositoryProtocol {
     }
     
     public func fetchSearchList(keyword: String, countLimit: Int) async -> [SearchResultEntity] {
-        await remoteSearchDataSource.fetchSearchList(keyword: keyword, countLimit: countLimit).results.map { $0.toDomain() }
+        await remoteSearchDataSource
+            .fetchSearchList(keyword: keyword, countLimit: countLimit)
+            .results
+            .map { $0.toDomain() }
     }
 }

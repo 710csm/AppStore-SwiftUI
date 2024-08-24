@@ -55,7 +55,7 @@ struct SearchResultView: View {
             }
             .listStyle(.plain)
             .animation(.easeInOut, value: store.state.searchResults)
-            .accessibilityIdentifier("searchResultList") // 각 항목에 identifier 설정
+            .accessibilityIdentifier("searchResultList") // List View의 identifier 설정
         case .loading:
             ProgressView()
                 .progressViewStyle(.circular)
@@ -82,7 +82,11 @@ struct SearchResultView: View {
 // MARK: - SearchResultHeaderView
 
 struct SearchResultHeaderView: View {
-    let result: SearchResultEntity
+    private let result: SearchResultEntity
+    
+    init(result: SearchResultEntity) {
+        self.result = result
+    }
     
     var body: some View {
         HStack {
@@ -110,7 +114,23 @@ struct SearchResultHeaderView: View {
 // MARK: - SearchResultScreenShotView
 
 struct ScreenShotView: View {
-    let screenShots: ScreenShots
+    private let screenShots: ScreenShots
+    private let shortSideSize = UIScreen.main.bounds.width / 3 - 20
+    
+    private var imageWidth: CGFloat {
+        return screenShots.isLongWidth ?
+        shortSideSize * screenShots.mode.ratio :
+        shortSideSize
+    }
+    private var imageHeight: CGFloat {
+        return screenShots.isLongWidth ?
+        shortSideSize :
+        shortSideSize / screenShots.mode.ratio
+    }
+    
+    init(screenShots: ScreenShots) {
+        self.screenShots = screenShots
+    }
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -127,20 +147,6 @@ struct ScreenShotView: View {
         .selectionDisabled(false)
         .scrollDisabled(!screenShots.isLongWidth)
         .animation(.bouncy, value: screenShots.urls.count)
-    }
-    
-    private let shortSideSize = UIScreen.main.bounds.width / 3 - 20
-    
-    private var imageWidth: CGFloat {
-        return screenShots.isLongWidth ?
-        shortSideSize * screenShots.mode.ratio :
-        shortSideSize
-    }
-    
-    private var imageHeight: CGFloat {
-        return screenShots.isLongWidth ?
-        shortSideSize :
-        shortSideSize / screenShots.mode.ratio
     }
 }
 

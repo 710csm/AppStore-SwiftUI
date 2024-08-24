@@ -72,20 +72,27 @@ public struct SearchResultReducer {
                     return .none
                 }
                 return .run { [keyword = self.searchText, countLimit = state.countLimit] send in
-                    await send(.searchResponse(await fetchSearchUseCase.execute(keyword: keyword, countLimit: countLimit)))
+                    await send(
+                        .searchResponse(
+                            await fetchSearchUseCase.execute(keyword: keyword, countLimit: countLimit)
+                        )
+                    )
                 }
             case .executeSearch:
                 if state.isInitalized {
                     return .none
                 }
                 
-                
                 state.isInitalized = true
                 state.showingState = .loading
                 state.countLimit = Self.searchCountLimitUnit
                 
                 return .run { [keyword = self.searchText, countLimit = state.countLimit] send in
-                    await send(.searchResponse(await fetchSearchUseCase.execute(keyword: keyword, countLimit: countLimit)))
+                    await send(
+                        .searchResponse(
+                            await fetchSearchUseCase.execute(keyword: keyword, countLimit: countLimit)
+                        )
+                    )
                 }
             case let .searchResponse(response):
                 if response.isEmpty {
